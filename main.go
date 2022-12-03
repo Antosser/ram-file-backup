@@ -12,7 +12,7 @@ func main() {
 
 		data, _ := os.ReadFile(os.Args[1])
 
-		if dialog.Message("%s", "Restore file now?").Title("RAM File Backup").YesNo() {
+		for dialog.Message("%s", "Restore file now?").Title("RAM File Backup").YesNo() {
 			os.WriteFile(os.Args[1], data, fs.ModePerm)
 		}
 	} else {
